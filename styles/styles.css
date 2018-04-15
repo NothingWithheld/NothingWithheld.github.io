@@ -1,0 +1,575 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+	font-size: 62.5%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Serif', serif;
+}
+
+header {
+	height: 95vh;
+	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+
+header > h1 {
+	margin: 0;
+	color: white;
+	font-size: 7rem;
+	font-family: 'PT Serif', serif;
+	position: absolute;
+    top: 45%;
+	left: 5%;
+    transform: translateY(-50%);
+	padding-right: 8rem;
+}
+
+span {
+	color: white;
+}
+
+h1 {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 3.5rem;
+	margin-left: 4rem;
+}
+
+header + div {
+	background-color: #a5a8aa;
+	height: 20vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+header + div > h2 {
+	font-size: 4rem;
+	position: absolute;
+	padding: 1rem;
+}
+
+.courses > li {
+	list-style-type: none;
+	width: 13.5rem;
+	height: 8rem;
+	background-color: #a5a8aa;
+	padding: 0.5em;
+	font-size: 1.6rem;
+	transition-property: opacity;
+	transition-duration: 0.35s;
+	box-sizing: border-box;
+	overflow: hidden; 
+	display: block;
+}
+
+.courses > li > a {
+	display: block;
+	font-size: 1.2rem;
+	font-style: italic;
+	line-height: 1.2;
+	text-decoration: none;
+	color: black;
+}
+
+.courses > li > b {
+	display: flex;
+	margin-bottom: -1.5rem;
+	justify-content: center;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.curriculum-grid {
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	grid-teplate-rows: 1.5fr 5fr 2fr;
+	grid-template-areas: 
+		'. title title'
+		'key courses .'
+		'. info .';
+}
+
+.courses > h2 {
+	background-color: #fa6300;
+	margin: 0;
+	padding: 0.5rem 0 0 1rem;
+	font-size: 1.6rem;
+}
+
+.courses > h3 {
+	background-color: #fa6300;
+	margin: 0;
+	padding: 0.2rem 0 0 1rem;
+	font-size: 1.2rem;
+}
+
+.courses {
+	display: grid;
+	grid-template-columns: 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr;
+	grid-template-rows: 2fr 1.5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+	grid-gap: 0.08rem;
+	grid-template-areas: 
+		'fresh fresh . soph soph . junior junior . senior senior'
+		'fall1 spring1 . fall2 spring2 . fall3 spring3 . fall4 spring4'
+		'math221 math231 . math241 math285 . math415 ie310 . sfo2 sfo3'
+		'chem102 phys211 . phys212 phys213 . sfo1 se311 . engsci elec1'
+		'chem103 cs101 . tam211 ie300 . se310 se312 . des elec2'
+		'eng100 ece110 . se261 tam251 . se320 se424 . se494 sfo4'
+		'se100 . . lee2 tam212 . ece211 tam335 . se495 lee6'
+		'rhet105 se101 . . se290 . . lee4 . lee5 .'
+		'lee1 . . . lee3 . . . . . .';
+	grid-area: courses;
+}
+	
+.courses > .highlight {
+	background-image: linear-gradient(transparent, transparent 50%, #fa6300 50%, #fa6300);
+	background-position: 0 100%;
+	background-size: 100% 201%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in;
+}
+
+@keyframes dropdown {
+	0%   {background-size: 201% 1%}
+	20%  {background-size: 201% 100%}
+	50%  {background-size: 201% 100%}
+	100% {background-size: 201% 10%}
+}
+
+.courses > .prereq {
+	background-image: linear-gradient(to right, #131f33, #131f33 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	animation-name: dropdown;
+	animation-duration: 0.3s;
+}
+
+.courses > .coreq {
+	background-image: linear-gradient(to right, #fa6300, #fa6300 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	animation-name: dropdown;
+	animation-duration: 0.3s;
+}
+
+.courses > .precoreq {
+	background-image: linear-gradient(to right, #bfd46d, #bfd46d 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	animation-name: dropdown;
+	animation-duration: 0.3s;
+}
+
+.opacity-down {
+	opacity: 0.2;
+}
+
+#key-map {
+	grid-area: key;
+	font-size: 1.6rem;
+	background-color: #e8e9ea;
+	margin: 8rem -2rem 0 2rem;
+}
+
+#key-class {
+	background-color: #a5a8aa;
+	margin: 3rem 1rem;
+	padding: 0.5rem;
+}
+
+#key-map p {
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+#key-prereq {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';	
+}
+
+#key-prereq > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #131f33;
+	border-bottom-width: 1rem;
+	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-prereq > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-prereq > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
+}
+
+#key-credit {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';
+}
+
+#key-credit > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #bfd46d;
+	border-bottom-width: 1rem;
+	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-credit > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-credit > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
+}
+
+#key-coreq {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';
+}
+
+#key-coreq > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #fa6300;
+	border-bottom-width: 1rem;
+	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-coreq > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-coreq > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
+}
+
+#course-info {
+	grid-area: info;
+	background-color: #a5a8aa;
+	margin: 0 0 0 4rem;
+	height: 30rem;
+	transition-property: height;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 3fr;
+	grid-template-areas:
+		'course links'
+		'descrip descrip';
+}
+
+#course-info > h2 {
+	font-size: 2.4rem;
+	padding: 0.6rem 6.4rem 0;
+	grid-area: course;
+}
+
+#course-info > a {
+	grid-area: links;
+	font-size: 1.2rem;
+	font-style: italic;
+	line-height: 1.75;
+	text-align: right;
+	padding: 1rem 1.8rem;
+	text-decoration: underline;
+}
+
+#course-info > p {
+	grid-area: descrip;
+	font-size: 1.4rem;
+	padding: 0 2.4rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+#course-info > p > br {
+	line-height: 2.5;
+}
+
+.hidden {
+	height: 0 !important;
+}
+
+footer {
+	height: 20rem;
+}
+
+.grid-title {
+	grid-area: title;
+}
+
+.freshman {
+	grid-area: fresh;
+}
+
+.sophomore {
+	grid-area: soph;
+}
+
+.junior {
+	grid-area: junior;
+}
+
+.senior {
+	grid-area: senior;
+}
+
+.fall--1 {
+	grid-area: fall1;
+}
+
+.fall--2 {
+	grid-area: fall2;
+}
+
+.fall--3 {
+	grid-area: fall3;
+}
+
+.fall--4 {
+	grid-area: fall4;
+}
+
+.spring--1 {
+	grid-area: spring1;
+}
+
+.spring--2 {
+	grid-area: spring2;
+}
+
+.spring--3 {
+	grid-area: spring3;
+}
+
+.spring--4 {
+	grid-area: spring4;
+}
+
+.math--221 {
+	grid-area: math221;
+}
+
+.math--231 {
+	grid-area: math231;
+}
+
+.math--241 {
+	grid-area: math241;
+}
+
+.math--285 {
+	grid-area: math285;
+}
+
+.math--415 {
+	grid-area: math415;
+}
+
+.chem--102 {
+	grid-area: chem102;
+}
+
+.chem--103 {
+	grid-area: chem103;
+}
+
+.phys--211 {
+	grid-area: phys211;
+}
+
+.phys--212 {
+	grid-area: phys212;
+}
+
+.phys--213 {
+	grid-area: phys213;
+}
+
+.cs--101 {
+	grid-area: cs101;
+}
+
+.eng--100 {
+	grid-area: eng100;
+}
+
+.ece--110 {
+	grid-area: ece110;
+}
+
+.ece--211 {
+	grid-area: ece211;
+}
+
+.se--100 {
+	grid-area: se100;
+}
+
+.se--101 {
+	grid-area: se101;
+}
+
+.se--261 {
+	grid-area: se261;
+}
+
+.se--290 {
+	grid-area: se290;
+}
+
+.se--310 {
+	grid-area: se310;
+}
+
+.se--311 {
+	grid-area: se311;
+}
+
+.se--312 {
+	grid-area: se312;
+}
+
+.se--320 {
+	grid-area: se320;
+}
+
+.se--424 {
+	grid-area: se424;
+}
+
+.se--494 {
+	grid-area: se494;
+}
+
+.se--495 {
+	grid-area: se495;
+}
+
+.tam--211 {
+	grid-area: tam211;
+}
+
+.tam--212 {
+	grid-area: tam212;
+}
+
+.tam--251 {
+	grid-area: tam251;
+}
+
+.tam--335 {
+	grid-area: tam335;
+}
+
+.ie--300 {
+	grid-area: ie300;
+}
+
+.ie--310 {
+	grid-area: ie310;
+}
+
+.rhet--105 {
+	grid-area: rhet105;
+}
+
+.lee--1 {
+	grid-area: lee1;
+}
+
+.lee--2 {
+	grid-area: lee2;
+}
+
+.lee--3 {
+	grid-area: lee3;
+}
+
+.lee--4 {
+	grid-area: lee4;
+}
+
+.lee--5 {
+	grid-area: lee5;
+}
+
+.lee--6 {
+	grid-area: lee6;
+}
+
+.sfo--1 {
+	grid-area: sfo1;
+}
+
+.sfo--2 {
+	grid-area: sfo2;
+}
+
+.sfo--3 {
+	grid-area: sfo3;
+}
+
+.sfo--4 {
+	grid-area: sfo4;
+}
+
+.design-elective {
+	grid-area: des;
+}
+
+.engineering-science-elective {
+	grid-area: engsci;
+}
+
+.free-elective--1 {
+	grid-area: elec1;
+}
+
+.free-elective--2 {
+	grid-area: elec2;
+}
