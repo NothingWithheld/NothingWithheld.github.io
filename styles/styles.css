@@ -66,12 +66,15 @@ header + div {
 
 header + div > h2 {
 	font-size: 4rem;
+	padding: auto 4rem;
 }
 
 .courses > li {
 	list-style-type: none;
-	width: 13.5rem;
-	height: 8rem;
+	min-width: 13.5rem;
+	min-height: 8rem; 
+/*	min-width: fit-content;
+	min-height: fit-content;  */
 	background-color: #a5a8aa;
 	padding: 0.5em;
 	font-size: 1.6rem;
@@ -101,7 +104,7 @@ header + div > h2 {
 .curriculum-grid {
 	display: grid;
 	grid-template-columns: 1fr 6fr 1fr;
-	grid-teplate-rows: 1.5fr 5fr 2fr;
+	grid-teplate-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
 	grid-template-areas: 
 		'. title title'
 		'key courses .'
@@ -111,7 +114,7 @@ header + div > h2 {
 .courses > h2 {
 	background-color: #fa6300;
 	margin: 0;
-	padding: 0.75rem 1rem;
+	padding: 0.5rem 1rem;
 	font-size: 1.6rem;
 }
 
@@ -124,8 +127,8 @@ header + div > h2 {
 
 .courses {
 	display: grid;
-	grid-template-columns: 1fr 1fr minmax(auto, 1em) 1fr 1fr minmax(auto, 1em) 1fr 1fr minmax(auto, 1em) 1fr 1fr;
-	grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr 1fr minmax(auto, 1rem) ) 1fr 1fr;
+	grid-template-rows: repeat(2, minmax(min-content, auto) ) repeat(7, 1fr);
 	grid-gap: 0.08rem;
 	grid-template-areas: 
 		'fresh fresh . soph soph . junior junior . senior senior'
