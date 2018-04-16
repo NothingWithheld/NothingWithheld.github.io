@@ -354,7 +354,19 @@ header + div > h2 {
 }
 
 footer {
-	height: 20rem;
+	height: 30rem;
+	background-color: black;
+	color: white;
+	font-size: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 1rem 0 0;
+}
+
+footer a {
+	color: white;
 }
 
 .grid-title {
