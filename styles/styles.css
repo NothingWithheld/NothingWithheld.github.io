@@ -103,8 +103,8 @@ header + div > h2 {
 
 .curriculum-grid {
 	display: grid;
-	grid-template-columns: 1fr 6fr 1fr;
-	grid-teplate-rows: 1fr minmax(auto, 125rem) 1fr;
+	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 125rem) 1fr;
+	grid-teplate-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
 	grid-template-areas: 
 		'. title title'
 		'key courses .'
@@ -203,10 +203,9 @@ header + div > h2 {
 #key-map {
 	grid-area: key;
 	font-size: 1.6rem;
-	background-color: #e8e9ea;
-	margin: 8rem -2rem 0 auto;
+	margin: 8rem -3rem 0 auto;
 	max-height: max-content;
-	max-width: 20rem;
+	width: 20rem;
 }
 
 #key-class {
