@@ -124,9 +124,9 @@ function cycleText() {
 	} else {
 		this.currentText = fullText.substring(0, this.currentText.length + 1);
 	}
-	this.htmlLocation.innerHTML = `<span>${this.currentText}</span>`;
+	this.htmlLocation.innerHTML = `<span>${this.currentText}</span><span id="cursor">|</span>`;
 	
-	let typingTime = 150 - 100 * Math.random();
+	let typingTime = 250 - 200 * Math.random();
 	if (this.isDeleting) {
 		typingTime = ( fullText.length - this.currentText.length < 15 ) ? (this.currentText.length / fullText.length) * 100 : 30;
 	}
@@ -134,10 +134,12 @@ function cycleText() {
 	if (!this.isDeleting && this.currentText === fullText) {
     	typingTime = this.holdTime;
     	this.isDeleting = true;
+		document.getElementById('cursor').classList.add('blinking');
   	} else if (this.isDeleting && this.currentText === '') {
     	this.isDeleting = false;
     	this.iterNumber++;
     	typingTime = 1000;
+		document.getElementById('cursor').classList.add('blinking');
   	}
 	
 	let typingProperties = this;

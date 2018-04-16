@@ -14,22 +14,38 @@ header {
 	background-color: black;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	align-items: center;
 }
 
 header > h1 {
 	margin: 0;
 	color: white;
-	font-size: 7rem;
+	font-size: 10rem;
 	font-family: 'PT Serif', serif;
 	position: absolute;
-    top: 45%;
-	left: 5%;
-    transform: translateY(-50%);
-	padding-right: 8rem;
+	padding: 0 10rem;
 }
 
-span {
+header > span {
 	color: white;
+}
+
+#cursor {
+	font-size: 11rem;
+}
+
+@keyframes blink {
+	0%   {opacity: 1}
+	50%  {opacity: 0}
+	100% {opacity: 1}
+}
+
+.blinking {
+	animation-name: blink;
+	animation-timing-function: step-start;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
 }
 
 h1 {
@@ -44,12 +60,11 @@ header + div {
 	margin: 0;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 header + div > h2 {
 	font-size: 4rem;
-	position: absolute;
-	padding: 1rem;
 }
 
 .courses > li {
