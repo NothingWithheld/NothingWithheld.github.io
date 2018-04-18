@@ -112,14 +112,14 @@ header + div > h2 {
 }
 
 .courses > h2 {
-	background-color: #fa6300;
+	background-color: #e84a27;
 	margin: 0;
 	padding: 0.5rem 1rem;
 	font-size: 1.6rem;
 }
 
 .courses > h3 {
-	background-color: #fa6300;
+	background-color: #e84a27;
 	margin: 0;
 	padding: 0.5rem;
 	font-size: 1.2rem;
@@ -144,7 +144,7 @@ header + div > h2 {
 }
 	
 .courses > .highlight {
-	background-image: linear-gradient(transparent, transparent 50%, #fa6300 50%, #fa6300);
+	background-image: linear-gradient(transparent, transparent 50%, #e84a27 50%, #e84a27);
 	background-position: 0 100%;
 	background-size: 100% 201%;
 	background-repeat: no-repeat;
@@ -161,7 +161,7 @@ header + div > h2 {
 }
 
 .courses > .prereq {
-	background-image: linear-gradient(to right, #131f33, #131f33 50%, transparent 50%, transparent);
+	background-image: linear-gradient(to right, #13294b, #13294b 50%, transparent 50%, transparent);
 	background-position: 0 100%;
 	background-size: 201% 10%;
 	background-repeat: no-repeat;
@@ -173,7 +173,7 @@ header + div > h2 {
 }
 
 .courses > .coreq {
-	background-image: linear-gradient(to right, #fa6300, #fa6300 50%, transparent 50%, transparent);
+	background-image: linear-gradient(to right, #e84a27, #e84a27 50%, transparent 50%, transparent);
 	background-position: 0 100%;
 	background-size: 201% 10%;
 	background-repeat: no-repeat;
@@ -234,7 +234,7 @@ header + div > h2 {
 	background-color: #a5a8aa;
 	box-sizing: border-box;
 	border-bottom-style: solid;
-	border-color: #131f33;
+	border-color: #13294b;
 	border-bottom-width: 1rem;
 	grid-area: square;
 	margin: 0.5rem;
@@ -273,6 +273,7 @@ header + div > h2 {
 #key-credit > b {
 	grid-area: type;
 	margin-bottom: -1rem;
+	word-wrap: break-word;
 }
 
 #key-credit > p {
@@ -294,7 +295,7 @@ header + div > h2 {
 	background-color: #a5a8aa;
 	box-sizing: border-box;
 	border-bottom-style: solid;
-	border-color: #fa6300;
+	border-color: #e84a27;
 	border-bottom-width: 1rem;
 	grid-area: square;
 	margin: 0.5rem;
@@ -363,12 +364,11 @@ footer {
 	height: 30rem;
 	background-color: black;
 	color: white;
-	font-size: 5rem;
+	font-size: 3rem;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	text-align: center;
-	margin: 1rem 0 0;
+	margin: 0;
+	padding: 0 10rem;
 }
 
 footer a {
@@ -609,4 +609,119 @@ footer a {
 
 .free-elective--2 {
 	grid-area: elec2;
+}
+
+@media only screen and (max-width: 768px) {
+	
+	.courses > li {
+	min-width: 8rem;
+	min-height: 6rem;
+	}
+	
+	.courses > h3 {
+	padding: 0;
+	font-size: 1rem;
+	}
+	
+	#key-map {
+	font-size: 1.2rem;
+	margin: 8rem -3rem 0 auto;
+	max-height: max-content;
+	width: 15rem;
+	}
+	
+	#key-map p {
+	font-size: 1rem;
+	}
+	
+}
+
+@media only screen and (max-width: 992px) {
+	
+	.courses > li {
+	min-width: 11rem;
+	min-height: 7.5rem;
+	}
+	
+	.curriculum-grid {
+	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
+	}
+	
+	.courses > h2 {
+	padding: 0.5rem 1rem;
+	font-size: 1.6rem;
+	}
+
+	.courses > h3 {
+	padding: 0.5rem;
+	font-size: 1rem;
+	}
+	
+	#key-map {
+	font-size: 1.2rem;
+	margin: 8rem -3rem 0 auto;
+	max-height: max-content;
+	width: 15rem;
+	}
+	
+	#key-map p {
+	font-size: 1.2rem;
+	}
+	
+}
+
+@media only screen and (max-width: 1200px) {
+	
+	.courses > li {
+	min-width: 11rem;
+	min-height: 6rem;
+	padding: 0.5rem;
+	}
+	
+	.curriculum-grid {
+	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
+	}
+	
+	.courses > h2 {
+	padding: 0.5rem 1rem;
+	font-size: 1.6rem;
+	}
+
+	.courses > h3 {
+	padding: 0.5rem;
+	font-size: 1rem;
+	}
+	
+	#key-map {
+	font-size: 1.2rem;
+	margin: 8rem -3rem 0 auto;
+	max-height: max-content;
+	width: 15rem;
+	}
+	
+	#key-map p {
+	font-size: 1.2rem;
+	}
+	
+}
+	
+@media only screen and (min-width: 1201px) {
+	
+	.courses > li {
+	min-width: 11rem;
+	min-height: 7.5rem;
+	padding: 0.75rem;
+	}
+	
+	.curriculum-grid {
+	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 115rem) 1fr;
+	}
+	
+	#key-map {
+	font-size: 1.6rem;
+	margin: 8rem -3rem 0 auto;
+	max-height: max-content;
+	width: 20rem;
+	}
+	
 }
