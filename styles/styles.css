@@ -656,7 +656,7 @@ footer a {
 	
 	.courses > li {
 	min-width: 11rem;
-	min-height: 7.5rem;
+	min-height: 7rem;
 	}
 	
 	.courses > h2 {
@@ -705,16 +705,16 @@ footer a {
 	
 }
 
-@media only screen and (min-width: 1076) and (max-width: 1270px) {
+@media only screen and (min-width: 1076px) and (max-width: 1270px) {
 	
 	.courses > li {
 		min-width: 11rem;
-		min-height: 6rem;
+		min-height: 7rem;
 		padding: 0.5rem;
 	}
 	
 	.curriculum-grid {
-		grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
+		grid-template-columns: minmax(min-content, 1fr) minmax(auto, 105rem) 1fr;
 	}
 	
 	.courses > h2 {
@@ -733,11 +733,7 @@ footer a {
 		max-height: max-content;
 		width: 17.5rem;
 	}
-	
-	#key-map p {
-		font-size: 1.2rem;
-	}
-	
+
 }
 	
 @media only screen and (min-width: 1271px) {
