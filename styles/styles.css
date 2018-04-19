@@ -52,7 +52,6 @@ header > span {
 h1 {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 3.5rem;
-	margin-left: 4rem;
 }
 
 header + div {
@@ -104,7 +103,7 @@ header + div > h2 {
 .curriculum-grid {
 	display: grid;
 	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 125rem) 1fr;
-	grid-teplate-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
+	grid-template-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
 	grid-template-areas: 
 		'. title title'
 		'key courses .'
@@ -141,6 +140,7 @@ header + div > h2 {
 		'rhet105 se101 . . se290 . . lee4 . lee5 .'
 		'lee1 . . . lee3 . . . . . .';
 	grid-area: courses;
+	-webkit-padding-start: 0;
 }
 	
 .courses > .highlight {
@@ -203,7 +203,7 @@ header + div > h2 {
 #key-map {
 	grid-area: key;
 	font-size: 1.6rem;
-	margin: 8rem -3rem 0 auto;
+	margin: 8rem auto 0 auto;
 	max-height: max-content;
 	width: 20rem;
 }
@@ -314,7 +314,6 @@ header + div > h2 {
 #course-info {
 	grid-area: info;
 	background-color: #a5a8aa;
-	margin: 0 0 0 4rem;
 	height: 30rem;
 	transition-property: height;
 	transition-duration: 2s;
@@ -636,15 +635,28 @@ footer a {
 	
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1075px) {
+	
+	.curriculum-grid {
+	grid-template-columns: 1fr minmax(auto, 100rem) 1fr;
+	grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr minmax(min-content, auto);
+	grid-template-areas: 
+		'. title title'
+		'. key .'
+		'. courses .'
+		'. info .';
+	}
+	
+	#key-map {
+		width: auto;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
 	
 	.courses > li {
 	min-width: 11rem;
 	min-height: 7.5rem;
-	}
-	
-	.curriculum-grid {
-	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
 	}
 	
 	.courses > h2 {
@@ -657,71 +669,81 @@ footer a {
 	font-size: 1rem;
 	}
 	
-	#key-map {
-	font-size: 1.2rem;
-	margin: 8rem -3rem 0 auto;
-	max-height: max-content;
-	width: 15rem;
-	}
-	
 	#key-map p {
 	font-size: 1.2rem;
 	}
 	
+	#key-class {
+	max-width: 20rem;
+	margin: 0;
+	}
+
+
+	#key-prereq > b {
+	margin: 0;
+	}
+
+	#key-prereq > p {
+	margin: 0;
+	}
+
+	#key-credit > b {
+	margin: 0;
+	}
+
+	#key-credit > p {
+	margin: 0;
+	}
+
+	#key-coreq > b {
+	margin: 0;
+	}
+
+	#key-coreq > p {
+	margin: 0;
+	}
+	
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1076) and (max-width: 1270px) {
 	
 	.courses > li {
-	min-width: 11rem;
-	min-height: 6rem;
-	padding: 0.5rem;
+		min-width: 11rem;
+		min-height: 6rem;
+		padding: 0.5rem;
 	}
 	
 	.curriculum-grid {
-	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
+		grid-template-columns: minmax(min-content, 1fr) minmax(auto, 100rem) 1fr;
 	}
 	
 	.courses > h2 {
-	padding: 0.5rem 1rem;
-	font-size: 1.6rem;
+		padding: 0.5rem 1rem;
+		font-size: 1.6rem;
 	}
 
 	.courses > h3 {
-	padding: 0.5rem;
-	font-size: 1rem;
+		padding: 0.5rem;
+		font-size: 1rem;
 	}
 	
 	#key-map {
-	font-size: 1.2rem;
-	margin: 8rem -3rem 0 auto;
-	max-height: max-content;
-	width: 15rem;
+		font-size: 1.2rem;
+		margin: 8rem auto 0 auto;
+		max-height: max-content;
+		width: 17.5rem;
 	}
 	
 	#key-map p {
-	font-size: 1.2rem;
+		font-size: 1.2rem;
 	}
 	
 }
 	
-@media only screen and (min-width: 1201px) {
-	
-	.courses > li {
-	min-width: 11rem;
-	min-height: 7.5rem;
-	padding: 0.75rem;
-	}
+@media only screen and (min-width: 1271px) {
 	
 	.curriculum-grid {
 	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 115rem) 1fr;
-	}
-	
-	#key-map {
-	font-size: 1.6rem;
-	margin: 8rem -3rem 0 auto;
-	max-height: max-content;
-	width: 20rem;
 	}
 	
 }
