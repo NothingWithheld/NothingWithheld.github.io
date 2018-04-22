@@ -203,10 +203,12 @@ function hideInfoDiv() {
 
 function showcaseCourseKey() {
 	document.getElementById('key-map').classList.add('key-map--showcased');
+	document.getElementById('key-class').classList.add('key-class--showcased');
 }
 
 function resetCourseKey() {
 	document.getElementById('key-map').classList.remove('key-map--showcased');
+	document.getElementById('key-class').classList.remove('key-class--showcased');
 }
 
 function resetHold(event) {
