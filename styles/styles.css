@@ -364,6 +364,7 @@ header + div > h2 {
 	text-align: right;
 	padding: 1rem 1.8rem;
 	text-decoration: underline;
+	color: black;
 }
 
 #course-info > p {
